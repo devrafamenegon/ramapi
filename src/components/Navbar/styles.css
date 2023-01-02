@@ -1,0 +1,294 @@
+#navbar-desktop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-image: url("/img/fundo5.jpg");
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-box-shadow: 0px 21px 50px 25px #000000;
+          box-shadow: 0px 21px 50px 25px #000000;
+}
+
+#navbar-desktop img {
+  height: 7rem;
+  cursor: pointer;
+}
+
+#navbar-desktop ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #000000;
+}
+
+#navbar-desktop ul li {
+  font-size: 1.1rem;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+#navbar-desktop ul li a {
+  text-decoration: none;
+  color: var(--branco);
+  display: block;
+  text-decoration: none;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+#navbar-desktop ul li a:hover {
+  color: var(--azudalogo);
+  text-shadow: 0px 0px 15px var(--verde);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  background-image: url("/img/fundo5.jpg");
+  opacity: 0;
+  z-index: 100;
+  visibility: hidden;
+  -webkit-transition: all .375s;
+  transition: all .375s;
+}
+
+.navbar ul, .navbar li {
+  list-style: none;
+  padding: 0;
+}
+
+.navbar ul {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: translateX(-18%) skew(-16deg);
+          transform: translateX(-18%) skew(-16deg);
+}
+
+.navbar ul li {
+  display: block;
+  margin: .5rem 0;
+  text-align: right;
+  -webkit-transform: skew(16deg);
+          transform: skew(16deg);
+}
+
+.navbar ul li a {
+  opacity: 0;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  display: block;
+  padding: 12px 0;
+  color: #fff;
+  font-size: 2em;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar li:nth-child(1) a {
+  -webkit-transition: all 275ms 175ms;
+  transition: all 275ms 175ms;
+}
+
+.navbar li:nth-child(2) a {
+  -webkit-transition: all 275ms 225ms;
+  transition: all 275ms 225ms;
+}
+
+.navbar li:nth-child(3) a {
+  -webkit-transition: all 275ms 250ms;
+  transition: all 275ms 250ms;
+}
+
+.navbar li:nth-child(4) a {
+  -webkit-transition: all 275ms 275ms;
+  transition: all 275ms 275ms;
+}
+
+.navbar.is-open {
+  opacity: 1;
+  z-index: 100;
+  visibility: visible;
+  -webkit-appearance: none;
+}
+
+.navbar.is-open::before {
+  -webkit-transform: skew(-14deg) translateX(0);
+          transform: skew(-14deg) translateX(0);
+}
+
+.navbar.is-open a {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: -15px;
+  background: var(--cor-bg-principal);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: skew(-14deg) translateX(-120%);
+          transform: skew(-14deg) translateX(-120%);
+  -webkit-transition: all .275s .1s;
+  transition: all .275s .1s;
+}
+
+/* Burger Style: @see: https://codepen.io/CreativeJuiz/full/oMZNXy */
+.open-navbar {
+  position: fixed;
+  top: 4rem;
+  right: 3rem;
+  z-index: 1000;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.open-navbar:focus {
+  outline: none;
+}
+
+.burger {
+  position: relative;
+  display: block;
+  width: 28px;
+  height: 4px;
+  margin: 0 auto;
+  background: #fff;
+  -webkit-transform: skew(5deg);
+          transform: skew(5deg);
+  -webkit-transition: all .275s;
+  transition: all .275s;
+}
+
+.burger:after, .burger:before {
+  content: '';
+  display: block;
+  height: 100%;
+  background: #fff;
+  -webkit-transition: all .275s;
+  transition: all .275s;
+}
+
+.burger:after {
+  -webkit-transform: translateY(-12px) translateX(-2px) skew(-20deg);
+          transform: translateY(-12px) translateX(-2px) skew(-20deg);
+}
+
+.burger:before {
+  -webkit-transform: translateY(-16px) skew(-10deg);
+          transform: translateY(-16px) skew(-10deg);
+}
+
+/* Toggle State part */
+.is-open .burger {
+  -webkit-transform: skew(5deg) translateY(-8px) rotate(-45deg);
+          transform: skew(5deg) translateY(-8px) rotate(-45deg);
+}
+
+.is-open .burger:before {
+  -webkit-transform: translateY(0px) skew(-10deg) rotate(75deg);
+          transform: translateY(0px) skew(-10deg) rotate(75deg);
+}
+
+.is-open .burger:after {
+  -webkit-transform: translateY(-12px) translateX(10px) skew(-20deg);
+          transform: translateY(-12px) translateX(10px) skew(-20deg);
+  opacity: 0;
+}
+
+/* MENU Text part */
+.burger-text {
+  display: block;
+  font-size: .675rem;
+  letter-spacing: .05em;
+  margin-top: .5em;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-align: center;
+  color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+  .mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #navbar-desktop {
+    display: none;
+  }
+  #navbar-mobile {
+    background-image: url("/img/fundo5.jpg");
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    -webkit-box-shadow: 0px 21px 50px 25px #000000;
+            box-shadow: 0px 21px 50px 25px #000000;
+  }
+  #navbar-mobile > img {
+    height: 6rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #navbar-mobile > img {
+    height: 5rem;
+  }
+  #burger {
+    right: 1.65rem;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  #navbar-mobile {
+    height: 6rem;
+  }
+  #navbar-mobile > img {
+    height: 4rem;
+  }
+  #burger {
+    right: 0.7rem;
+    top: 3.2rem;
+  }
+}
+
+@media only screen and (max-width: 321px) {
+  #navbar-mobile {
+    height: 6rem;
+  }
+  #burger {
+    right: 0.4rem;
+    top: 3rem;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

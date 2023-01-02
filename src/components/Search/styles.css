@@ -1,0 +1,129 @@
+.container-toolbar {
+  margin: 3rem 5rem 0 5rem;
+}
+
+#toolbar {
+  width: 100%;
+  height: 3rem;
+  padding-left: 1rem;
+  font-size: 1.2rem;
+  color: white;
+  background-color: var(--background-card);
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: .5rem;
+}
+
+.container-pagination {
+  margin-top: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 0 5rem;
+}
+
+.index-pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+  border-radius: 100%;
+  margin-right: .3rem;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: background-color .3s ease-in;
+  transition: background-color .3s ease-in;
+}
+
+.index-pagination:hover {
+  background-color: var(--background-card);
+}
+
+.container-lista {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 0 auto;
+  padding: 5rem;
+  justify-items: center;
+}
+
+.card-personagem {
+  width: 100%;
+  height: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 1rem;
+  color: white;
+  background-color: var(--background-card);
+}
+
+.card-personagem img {
+  width: 40%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+  border-radius: 1rem 0 0 1rem;
+}
+
+.card-personagem .card-content {
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-top: 2rem;
+  position: relative;
+}
+
+.card-personagem .card-content span {
+  position: absolute;
+  cursor: pointer;
+  opacity: 80%;
+  bottom: 1rem;
+}
+
+.card-personagem .card-content span:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 1024px) {
+  .container-lista {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container-lista {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+  .card-personagem {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .card-personagem img {
+    border-radius: 1rem 1rem 0 0;
+    width: 100%;
+    height: 75%;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

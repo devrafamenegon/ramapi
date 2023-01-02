@@ -1,0 +1,43 @@
+:root {
+  --cor-bg-principal: #121212;
+  --verde: #63fa42;
+  --branco: #FAFCF9;
+  --azudalogo: #00afc7;
+  --background-card: #242424;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--cor-bg-principal);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+
+  margin: 0 auto;
+}
+
+.mobile {
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+	background: url('img/fundo5.jpg');
+}
+
+::-webkit-scrollbar {
+	width: .2rem;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--branco);
+}

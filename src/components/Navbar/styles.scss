@@ -1,0 +1,261 @@
+#navbar-desktop {
+  display: flex;
+
+  margin-top: 1rem;
+
+  align-items: center;
+  justify-content: space-around;
+
+  background-image: url('/img/fundo5.jpg');
+  
+  box-sizing: content-box;
+  box-shadow: 0px 21px 50px 25px #000000;
+
+  img {
+    height: 7rem;
+    cursor: pointer;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    background-color: #000000;
+
+    li {
+      font-size: 1.1rem;
+      margin-right: 2rem;
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+        color: var(--branco);
+        display: block;
+        text-decoration: none;
+        transition: all .5s ease-in-out;
+
+        &:hover {
+          color: var(--azudalogo);
+          text-shadow: 0px 0px 15px var(--verde);
+        }
+      }
+    }
+  }
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  background-image: url('/img/fundo5.jpg');
+  opacity: 0;
+  z-index: 100;
+  visibility: hidden;
+  transition: all .375s;
+
+  ul, li {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul {
+    display: inline-flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: center;
+    transform: translateX(-18%) skew(-16deg);
+
+    li {
+      display: block;
+      margin: .5rem 0;
+      text-align: right;
+      transform: skew(16deg);
+
+      a {
+        opacity: 0;
+        transform: translateY(-10px);
+
+        display: block;
+        padding: 12px 0;
+        color: #fff;
+        font-size: 2em;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    }
+  }
+
+  li:nth-child(1) a {
+    transition: all 275ms 175ms
+  }
+  li:nth-child(2) a {
+    transition: all 275ms 225ms
+  }
+  li:nth-child(3) a {
+    transition: all 275ms 250ms
+  }
+  li:nth-child(4) a {
+    transition: all 275ms 275ms
+  }
+
+  &.is-open {
+    opacity: 1;
+    z-index: 100;
+    visibility: visible;
+    -webkit-appearance:none;
+
+    &::before {
+      transform: skew(-14deg) translateX(0);
+    }
+
+    a {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: -15px;
+    background: var(--cor-bg-principal);
+    transform-origin: 0 0;
+    transform: skew(-14deg) translateX(-120%);
+    transition: all .275s .1s;
+  }
+}
+
+
+/* Burger Style: @see: https://codepen.io/CreativeJuiz/full/oMZNXy */
+.open-navbar {
+	position: fixed;
+	top: 4rem;
+	right: 3rem;
+	z-index: 1000;
+	background: none;
+	border: 0;
+	cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.burger {
+	position: relative;
+	display: block;
+	width: 28px;
+	height: 4px;
+	margin: 0 auto;
+	background: #fff;
+	transform: skew(5deg);
+	transition: all .275s;
+
+  &:after,
+  &:before {
+    content: '';
+    display: block;
+    height: 100%;
+    background: #fff;
+    transition: all .275s;
+  }
+
+  &:after {
+    transform: translateY(-12px) translateX(-2px) skew(-20deg);
+  }
+
+  &:before {
+    transform: translateY(-16px) skew(-10deg);
+  }
+}
+
+/* Toggle State part */
+.is-open .burger {
+	transform: skew(5deg) translateY(-8px) rotate(-45deg);
+
+  &:before {
+    transform: translateY(0px) skew(-10deg) rotate(75deg);
+  }
+
+  &:after {
+    transform: translateY(-12px) translateX(10px) skew(-20deg);
+      opacity: 0;
+  }
+}
+
+/* MENU Text part */
+.burger-text {
+	display: block;
+	font-size: .675rem;
+	letter-spacing: .05em;
+	margin-top: .5em;
+	text-transform: uppercase;
+	font-weight: 500;
+	text-align: center;
+	color: #fff;
+}
+
+@media only screen and (max-width:768px) {
+  .mobile {
+    display: flex;
+  }
+
+  #navbar-desktop {
+    display: none;
+  }
+
+  #navbar-mobile {
+    background-image: url('/img/fundo5.jpg');
+
+    box-sizing: content-box;
+    box-shadow: 0px 21px 50px 25px #000000;
+  }
+
+  #navbar-mobile > img{
+    height: 6rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (max-width:480px) {
+  #navbar-mobile > img {
+    height: 5rem;
+  }
+
+  #burger{
+    right: 1.65rem;
+  }
+}
+
+@media only screen and (max-width:376px) {
+  #navbar-mobile{
+    height: 6rem;
+  }
+
+  #navbar-mobile > img {
+    height: 4rem;
+  }
+  
+  #burger{
+    right: 0.7rem;
+    top: 3.2rem;
+  }
+}
+
+@media only screen and (max-width:321px) {
+  #navbar-mobile{
+    height: 6rem;
+  }
+  
+  #burger{
+    right: 0.4rem;
+    top: 3rem;
+  }
+}

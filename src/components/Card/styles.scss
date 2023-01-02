@@ -1,0 +1,124 @@
+.card {
+    width: 50vw;
+    height: 20rem;
+    border-radius: 1rem;
+  
+    margin: 0 auto;
+    margin-top: 6rem;
+  
+    color: var(--branco);
+  
+    display: flex;
+  
+    background-color: var(--background-card);
+  
+    img { 
+      width: 40%;
+      object-fit: cover;
+      object-position: 50% 50%;
+      border-radius: 1rem 0 0 1rem;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 2rem;
+    }
+  }
+  
+  .card-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  
+    span {
+      line-height: 1.5rem;
+      font-size: 1.2rem;
+    }
+  }
+  
+  .status {
+    margin-top: .1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .status__icon {
+    width: .7rem;
+    height: .7rem;
+    border-radius: 100%;
+    margin-right: .5rem;
+  }
+
+  @media only screen and (max-width:1440px) {
+    .card {
+      width: 60vw;
+      height: 20rem;
+    }
+  }
+  
+  @media only screen and (max-width:1024px) {
+    .card {
+      width: 70vw;
+      height: 20rem;
+      margin-top: 4rem;
+  
+      img {
+        width: 50%;
+      }
+    }
+  }
+  
+  @media only screen and (max-width:768px) {
+    .card {
+      height: 50rem;
+      width: 70vw;
+      flex-direction: column;
+    }
+    
+    .card img {
+      width: auto;
+      height: 50%;
+      border-radius: 1rem 1rem 0 0;
+    }
+  
+    .card-content h2{
+      line-height: normal;
+      font-size: 2rem;
+    }
+  
+    .card-content span {
+      line-height: 2rem;
+      font-size: 1.5rem;
+    }
+  
+    .status {
+      margin-top: 1rem;
+    }
+  }
+  
+  @media only screen and (max-width:480px) {
+    .card {
+      height: 40rem;
+      width: 70vw;
+      flex-direction: column;
+      
+      img {
+        height: 40%;
+      }
+    }
+  
+    .card-content span{
+      margin-top: .3rem;
+    }
+  
+    .card-content span:nth-child(7) {
+      display: none;
+    }
+  
+    .card-content span:nth-child(8) {
+      display: none;
+    }
+  }
